@@ -1,0 +1,24 @@
+<h2>All orders</h2>
+<table id="productTable">
+    <thead>
+        <tr>
+            <th>Order date</th>
+            <th>Order number</th>
+            <th>Total Items</th>
+            <th>Total Price</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let order of orderList"  >
+            <!-- Product rows will be added here dynamically -->
+            <td>{{order.createdAt}}</td>
+            <td>{{order._id}}</td>
+            <td>{{order.products.length}}</td>
+            <td>{{order.totalPrice}} €</td>
+            <td class="buttons">
+                <a [routerLink]="['/order/',order._id]" class="btn-edit">Show order</a>
+            </td>
+        </tr>
+    </tbody>
+</table>

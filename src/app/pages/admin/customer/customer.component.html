@@ -1,0 +1,25 @@
+<div class="container">
+    <h1>Customer List</h1>
+
+    <a [routerLink]="['/new-customer']" class="btn-create">Create account for customer</a>
+    <ul>
+        <li class="header">
+            <span class="name">Name</span>
+            <span class="email">Email</span>
+            <span class="address">Address</span>
+            <span class="phone">Phone Number</span>
+            <div class="actions">Actions</div>
+        </li>
+
+        <li *ngFor="let customer of customerList">
+            <span class="name">{{customer.fullname}}</span>
+            <span class="email">{{customer.email}}</span>
+            <span class="address">{{customer.address}}</span>
+            <span class="phone">{{customer.phonenumber}}</span>
+            <div class="actions">
+                <a [routerLink]="['/edit-customer/',customer._id]" class="btn-edit">Edit</a>
+                <button class="btn-delete" (click)="onDelete(customer._id)">Delete</button>
+            </div>
+        </li>
+    </ul>
+</div>

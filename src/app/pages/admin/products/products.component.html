@@ -1,0 +1,55 @@
+
+
+    <div class="container">
+        <h1>Add New Product</h1>
+        <form id="productForm">
+            <div class="form-group">
+                <label for="productName">Product Name:</label>
+                <input type="text" [(ngModel)]="productObj.title"  id="productName" name="productName" required>
+            </div>
+            <div class="form-group">
+                <label for="productPrice">Product Price:</label>
+                <input type="number" [(ngModel)]="productObj.price"  id="productPrice" name="productPrice" required>
+            </div>
+            <div class="form-group">
+                <label for="productDescription">Product Description:</label>
+                <textarea id="productDescription" [(ngModel)]="productObj.desc"  name="productDescription" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="productImage">Product Image URL:</label>
+                <input type="text" id="productImage" [(ngModel)]="productObj.img"  name="productImage" accept="image/*" required>
+            </div>
+            <!---<div class="form-group">
+                <label for="productImage">Product Image:</label>
+                <input type="file" (change)="onFileSelected($event)" id="productImage" [(ngModel)]="productObj.img"  name="productImage" accept="image/*" required>
+            </div> --->
+            <button type="submit" (click)="onAddProduct()">Add Product</button>
+        </form>
+
+        <h2>Product List</h2>
+        <table id="productTable">
+            <thead>
+                <tr>
+                    <th>Image</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Description</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let product of productList">
+                    <!-- Product rows will be added here dynamically -->
+                    <td><img [src]="product.img" class="image"></td>
+                    <td>{{product.title}}</td>
+                    <td>{{product.price}}</td>
+                    <td>{{product.desc}}</td>
+                    <td class="buttons"><a [routerLink]="['/edit-product/',product._id]" class="btn-edit">Edit</a>
+                        <button class="btn-delete" (click)="onDelete(product._id)">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+

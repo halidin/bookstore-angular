@@ -1,0 +1,19 @@
+
+<div class="container">
+    <h1>Edit Customer Information</h1>
+    <form action="#" method="post" id="customerForm">
+        <label for="fullname">Full Name:</label>
+        <input type="text" id="fullname" name="fullname" [(ngModel)]="currentInfo.fullname" required>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" [(ngModel)]="currentInfo.email"required>
+        
+        <label for="phonenumber">Phone Number:</label>
+        <input type="tel" id="phonenumber" name="phonenumber" [(ngModel)]="currentInfo.phonenumber"required>
+        
+        <label for="address">Address:</label>
+        <textarea id="address" name="address" [(ngModel)]="currentInfo.address" required></textarea>
+        
+        <button type="submit" (click)="editCustomer()">Update customer</button>
+    </form>
+</div>

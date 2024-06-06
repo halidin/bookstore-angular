@@ -1,0 +1,34 @@
+<div class="box">
+  
+    <h2>Register</h2>
+    
+    <form action="">
+      
+      <!-- Login -->
+      
+      <div class="rew-form">
+        
+        <label for="username">Username</label>
+        <input type="email" [(ngModel)]="registerObj.username" name="Username" required placeholder="Username">
+        
+
+        <label for="username">Email</label>
+        <input type="email" [(ngModel)]="registerObj.email" name="EmailId" required placeholder="Email">
+
+        <label for="password">Password</label>
+        <input type="password" [(ngModel)]="registerObj.password" name="Password" required placeholder="Password">
+        
+      </div>
+  
+      
+      <!-- Submit -->
+      
+      <input type="submit" id="submit" value="Register" (click)="onRegister()">
+      
+      <!-- Help -->
+      
+
+      <a [routerLink]="['/login']" class="btn btn-link">Login</a>
+      
+    </form>
+  </div>

@@ -1,0 +1,41 @@
+
+    <div class="container">
+        <div class="cart-section">
+            <h2>Products in Cart</h2>
+            <div *ngFor="let item of productList">
+                <div class="cart-item">
+                    <img [src]="item.img" class="image">
+                    <div class="item-details">
+                        <p>{{item.title}}</p>
+                        <p>{{item.price}} €</p>
+                        <p>{{item.quantity}} Items</p>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add more cart items as needed -->
+            <div class="total">
+                <h3>Total:{{totalPrice}} € </h3>
+            </div>
+            <button class="btn-delete" (click)="clearcart(cartId)" >Clear cart</button>
+        </div>
+        <div class="order-section">
+            <h2>Complete Order</h2>
+            <form>
+                <label for="fullname">Full Name</label>
+                <input type="text"[(ngModel)]="orderObj.fullname" id="fullname" name="fullname" required>
+                
+                <label for="email">Email</label>
+                <input type="email" [(ngModel)]="orderObj.email" id="email" name="email" required>
+                
+                <label for="phone">Phone Number</label>
+                <input type="tel" [(ngModel)]="orderObj.phonenumber" id="phone" name="phone" required>
+                
+                <label for="address">Address</label>
+                <textarea id="address" [(ngModel)]="orderObj.address" name="address" required></textarea>
+                
+                <button type="submit" (click)="order()">Complete Order</button>
+            </form>
+        </div>
+    </div>
