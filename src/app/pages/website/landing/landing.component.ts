@@ -75,7 +75,7 @@ export class LandingComponent {
       this.cartproductObj.products = [this.newProduct];
       this.http.post('https://bookshop-api-git-main-halidins-projects.vercel.app/api/cart/addtocart', this.cartproductObj, { headers: headers, observe: 'response' })
         .subscribe((res: any) => {
-          console.log(res.body);
+          alert('Product added to cart');
           this.getCart(); 
         });
     } else {
@@ -91,7 +91,7 @@ export class LandingComponent {
       
       this.http.post(`https://bookshop-api-git-main-halidins-projects.vercel.app/api/cart/updatecart/${this.cartId}`, this.cartproductObj, { headers: headers, observe: 'response' })
         .subscribe((res: any) => {
-          console.log(res.body);
+          alert('Product added to cart');
           this.getCart(); 
         });
     }
