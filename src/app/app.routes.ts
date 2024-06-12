@@ -18,7 +18,7 @@ export const routes: Routes = [
 
     {
         path:'',
-        redirectTo:'mainpage',
+        redirectTo:'/mainpage',
         pathMatch:'full'
     },
     {
