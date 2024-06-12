@@ -44,7 +44,7 @@
                     <input type="number" [(ngModel)]="product.quantity"  id="quantity{{product._id}}" name="quantity{{product._id}}" min="1" value="1">
         
                 </div>
-                <button class="add-to-cart" (click)="addToCart(product._id,product.price,product.title,product.img)">Add to Cart</button>
+                    <button class="add-to-cart" (click)="addToCart(product._id,product.price,product.title,product.img,product.quantity)">Add to Cart</button>
             </div>
 
             <!-- Add more products as needed -->
