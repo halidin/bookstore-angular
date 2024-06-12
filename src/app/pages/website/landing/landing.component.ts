@@ -31,6 +31,7 @@ export class LandingComponent {
   }
 
   ngOnInit(): void{
+    console.log('Mainpage')
     this.getUploadedProducts();
     this.getCart()
   }
