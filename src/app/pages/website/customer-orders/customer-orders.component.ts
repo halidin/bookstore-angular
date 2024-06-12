@@ -28,7 +28,6 @@ export class CustomerOrdersComponent {
   // Get orders that made from the logged in customer
   getCustomerOrders(){
     const userId = this.authService.getUserId()
-    console.log(userId)
     const token =localStorage.getItem('Authorization');
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
     this.http.get(`https://bookshop-api-git-main-halidins-projects.vercel.app/api/orders/${userId}`, { headers:headers,observe: 'response' }).subscribe((res:any)=>{
