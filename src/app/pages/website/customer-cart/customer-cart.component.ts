@@ -66,7 +66,6 @@ export class CustomerCartComponent {
   clearcart(id:string){
     const token = this.tokenHandlerService.getToken()
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
-    console.log(id)
     this.http.delete(`https://bookshop-api-git-main-halidins-projects.vercel.app/api/cart/clearcart/${id}`,{ headers:headers,observe: 'response' }).subscribe((res: any) => {
       if(res.status){
         alert('Cart cleared')
